@@ -880,6 +880,7 @@ on property:sys.boot_completed=1
     write /dev/stune/foreground/schedtune.prefer_idle 0
     write /dev/stune/top-app/schedtune.prefer_idle 0
     write /dev/stune/rt/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.boost 1
 
     # restore perf. parameters
     write /proc/ppm/policy/userlimit_min_cpu_freq "1 -1"
