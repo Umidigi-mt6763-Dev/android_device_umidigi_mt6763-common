@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libavservices_minijail_vendor
+    libavservices_minijail_vendor \
+    tinymix
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
