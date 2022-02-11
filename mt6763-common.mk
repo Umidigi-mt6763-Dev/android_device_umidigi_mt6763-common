@@ -207,6 +207,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    set_zram.sh \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6763.rc \
