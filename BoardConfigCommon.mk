@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/UMIDIGI/A5_Pro
-BOARD_VENDOR := UMIDIGI
+COMMON_PATH := device/umidigi/mt6763-common
+BOARD_VENDOR := umidigi
 
 # Architecture
 TARGET_ARCH := arm64
@@ -22,11 +22,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-# Assertions
-TARGET_OTA_ASSERT_DEVICE := A5_Pro
-
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := A5_Pro
 TARGET_NO_BOOTLOADER := true
 
 # Build
@@ -38,8 +34,8 @@ BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 TARGET_SCREEN_DENSITY := 420
 
 # HIDL
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
@@ -94,11 +90,11 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_BOARD_PLATFORM := mt6763
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6763
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6763
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Security patch level
@@ -107,8 +103,8 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # SEPolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # VNDK
 BOARD_VNDK_VERSION := current

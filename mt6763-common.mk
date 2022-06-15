@@ -4,11 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Get non-open-source specific aspects
-$(call inherit-product, vendor/UMIDIGI/A5_Pro/A5_Pro-vendor.mk)
-
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -110,7 +108,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.umidigi
+    android.hardware.light@2.0-service.umidigi_mt6763
 
 # Media
 PRODUCT_COPY_FILES += \
